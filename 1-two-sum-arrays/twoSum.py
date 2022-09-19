@@ -15,21 +15,25 @@
 import cProfile as profile
 import pstats
 
-# 2 function calls
-def twoSum(nums=[], target=int):
-    for i,j in enumerate(nums):
-        for k,l in enumerate(nums):
-            if i!=k and j+l==target:
-                return (j,l)
-    return (-1, -1)
-
-# 3 function calls
+#  Brute force: O(n^2) solution. nums[1..n] * nums[1..n]
 # def twoSum(nums=[], target=int):
-#     for k, v in enumerate(nums):
-#         y = target-v
-#         if y in nums and nums.index(y) != k:
-#             return (v, y)
+#     for i,j in enumerate(nums):
+#         for k,l in enumerate(nums):
+#             if i!=k and j+l==target:
+#                 return (j,l)
 #     return (-1, -1)
+
+# O(n) solution. 2 distinct traversals of nums[1..n]
+def twoSum(nums, target):
+    hashMap = {}
+    for i in range(len(nums)):
+        hashMap[nums[i]]=i
+
+    for i in range(len(nums)):
+        complement = target-nums[i]
+        if complement in hashMap and hashMap[complement] != i:
+            return [i, hashMap[complement]]
+
 
 if __name__=='__main__':
     # call function twoSum with profiling

@@ -12,6 +12,7 @@
 # Input : nums[] = [5, 2, 6, 8, 1, 9], target = 12
 # Output: (-1, -1)
 
+#  Brute force: O(n^2) solution. nums[1..n] * nums[1..n]
 function twoSum(nums=[], target=int)
   for i in eachindex(nums), j in eachindex(nums)
     if (i != j) && (nums[i]+nums[j] == target)
