@@ -32,7 +32,9 @@ def twoSum(nums, target):
     for i in range(len(nums)):
         complement = target-nums[i]
         if complement in hashMap and hashMap[complement] != i:
-            return [i, hashMap[complement]]
+            return (i, hashMap[complement])
+      
+    return (-1, -1)
 
 
 if __name__=='__main__':
