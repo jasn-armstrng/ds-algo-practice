@@ -19,4 +19,6 @@ def productExceptSelf(nums=[]):
         productArray.append(product)
     return productArray
 
-print(productExceptSelf([1,2,3,4]))
+# Test
+# print(productExceptSelf([1,2,3,4]))
+# print(productExceptSelf([-1,1,0,-3,3]))
