@@ -5,9 +5,18 @@
 # You must write an algorithm that runs in O(n) time and without using the division operation.
 
 def productExceptSelf(nums=[]):
-    product = 1
-    for i in range(0,len(nums)):
-        product*=nums[i]
-    return product
+    productArray=[]
+    n = len(nums)
+
+    # O(n^2) solution
+    for i in range(0, n):
+        product=1
+        for j in nums:
+            if j == nums[i]:
+                continue
+            else:
+                product*=j
+        productArray.append(product)
+    return productArray
 
 print(productExceptSelf([1,2,3,4]))
