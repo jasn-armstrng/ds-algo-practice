@@ -11,14 +11,18 @@ def productExceptSelf(nums=[]):
     # O(n^2) solution
     for i in range(0, n):
         product=1
-        for j in nums:
-            if j == nums[i]:
+        for j in range(0, n):
+            if i == j:
                 continue
             else:
-                product*=j
+                product*=nums[j]
         productArray.append(product)
     return productArray
+
 
 # Test
 # print(productExceptSelf([1,2,3,4]))
 # print(productExceptSelf([-1,1,0,-3,3]))
+# print(productExceptSelf([0,0]))
+# print(productExceptSelf([1,1]))
+# print(productExceptSelf([1,0,0,0]))
