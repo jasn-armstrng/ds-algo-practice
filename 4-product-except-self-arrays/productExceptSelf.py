@@ -12,9 +12,7 @@ def productExceptSelf(nums=[]):
     for i in range(0,n):
         product=1
         for j in range(0,n):
-            if i==j:
-                continue
-            else:
+            if i!=j:
                 product*=nums[j]
         productArray.append(product)
     return productArray
