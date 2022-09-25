@@ -9,10 +9,10 @@ def productExceptSelf(nums=[]):
     n = len(nums)
 
     # O(n^2) solution
-    for i in range(0, n):
+    for i in range(0,n):
         product=1
-        for j in range(0, n):
-            if i == j:
+        for j in range(0,n):
+            if i==j:
                 continue
             else:
                 product*=nums[j]
