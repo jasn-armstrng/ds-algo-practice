@@ -5,21 +5,27 @@
 # You must write an algorithm that runs in O(n) time and without using the division operation.
 
 def productExceptSelf(nums=[]):
-    productArray=[]
+    # productArray=[]
     n = len(nums)
 
-    # O(n^2) solution
-    for i in range(0,n):
-        product=1
-        for j in range(0,n):
-            if i!=j:
-                product*=nums[j]
-        productArray.append(product)
-    return productArray
+    # # O(n^2) solution
+    # for i in range(0,n):
+    #     product=1
+    #     for j in range(0,n):
+    #         if i!=j:
+    #             product*=nums[j]
+    #     productArray.append(product)
+    # return productArray
 
+    productElements=[]
+    arr = nums.copy()
+    for i in range(0, n):
+        arr.pop(i)
+        print(arr)
+        arr = nums.copy()
 
 # Test
-# print(productExceptSelf([1,2,3,4]))
+productExceptSelf([1,2,3,4])
 # print(productExceptSelf([-1,1,0,-3,3]))
 # print(productExceptSelf([0,0]))
 # print(productExceptSelf([1,1]))
