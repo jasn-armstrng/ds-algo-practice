@@ -27,6 +27,12 @@ class Solution {
 };
 
 int main() {
+  std::vector<int> test_case {1, 2, 3, 4};
+  Solution s;
+  std::vector<int> result = s.running_sum(test_case); // -- expected 1, 3, 6, 10
 
+  for (int n: result) {
+    std::cout << n << '\n';
+  }
   return 0;
 }
